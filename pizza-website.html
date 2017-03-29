@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <script src="bootstrap/js/jquery.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
+    <style>
+        #bg-img{
+            background-image: url("images/bg-header.gif");
+            height: 101px;
+        }
+
+        #nav-right{
+            float: right;
+        }
+        #nav-right ul{
+            background-color:#ae402a;
+            padding: 10px 15px 10px 0px;
+        }
+        #nav-right ul li{
+            display: inline;
+            border-right: 1px solid white;
+        }
+        #nav-right ul li:first-child{
+            border: none;
+            background-color: orange;
+            padding: 12px 12px 12px 12px;
+        }
+        #nav-right ul li:last-child{
+            border: none;
+        }
+        #nav-right ul a{
+            color : white;
+            padding: 0px 10px 0px 10px;
+        }
+        #secondNavbar{
+            float: left;
+        }
+        #secondNavbar a{
+            color: black;
+            font-size: 18px;
+        }
+        #demo{
+            position:  relative;
+
+        }
+        #demo > a:hover,#demo:hover{
+            background-color: #ae5913
+        }
+        #demo2 > a:hover,#demo2:hover{
+            background-color: #ae5913
+        }
+        #demo3  > a:hover,#demo3:hover{
+            background-color: #ae5913
+        }
+        #demo:hover #nestedLi{
+            display: block;
+            background-color: #faf8f4;
+            border: 3px solid #ae5913;
+            padding: 15px 6px 0px 0px;
+        }
+        #demo ul {
+            list-style-type: none;
+            margin: 0px 10px 0px 0px;
+            padding-left: 10px;
+        }
+        #nestedLi{
+            background-color : #e9e6de;
+            display: none;
+            position: absolute;
+            width: 575px;
+            z-index: 100;
+        }
+        #nestedLi a{
+            font-size: 14px;
+        }
+        #nestedLi li{
+            border-bottom: 1px solid rgba(189, 189, 189, 0.28);
+            line-height: 30px;
+        }
+        #nestedLi li:last-child{
+            border-bottom: none;
+        }
+        #firstNestedUl{
+            float: left;
+            width: 250px;
+            border-right: 1px solid #ece7dd;
+            padding-right: 20px;
+        }
+        #secondNestedUl{
+            float: right;
+            width: 300px;
+        }
+        #thirdNestedDiv{
+            background-color: rgba(165, 149, 149, 0.19);
+            /* background-image: url(images/bg-drop-bottom.gif); */
+            margin-top: 170px;
+            width: 570px;
+            padding: 3px 0px 8px 8px;
+            /* padding-left: 0px; */
+            font-style: italic;
+            font-size: 14px;
+        }
+        #demo2{
+            position: relative;
+        }
+        #nestedLiDiv{
+            width: 290px;
+            position: absolute;
+            display: none;
+            z-index: 100;
+            background-color: white;
+            border: 3px solid #ae5913;
+        }
+        #demo2:hover #nestedLiDiv{
+            display: block;
+        }
+        #nestedLiDiv ul{
+            list-style-type: none;
+            margin: 10px 12px 2px 10px;
+            padding-left: 0px;
+            font-size: 14px;
+        }
+        #nestedLiDiv ul li  {
+            line-height: 30px;
+            border-bottom: 1px solid rgba(189, 189, 189, 0.28);
+        }
+        #nestedLiDiv ul a{
+            font-size: 14px;
+        }
+        #nestedLiDiv ul li:last-child{
+            border-bottom: none;
+        }
+        #demo3{
+            position: relative;
+        }
+        #nestedLiDiv2{
+            width: 290px;
+            position: absolute;
+            display: none;
+            z-index: 100;
+            background-color: white;
+            border: 3px solid #ae5913;
+        }
+        #demo3:hover #nestedLiDiv2{
+            display: block;
+        }
+        #nestedLiDiv2 ul{
+            list-style-type: none;
+            margin: 10px 12px 2px 10px;
+            padding-left: 0px;
+            /*font-size: 14px;*/
+        }
+        #nestedLiDiv2 ul li  {
+            line-height: 27px;
+            border-bottom : 1px solid rgba(189, 189, 189, 0.28);
+        }
+        #nestedLiDiv2 ul a{
+            font-size: 14px;
+        }
+        #nestedLiDiv2 ul li:last-child{
+            border-bottom: none;
+        }
+        #demo4{
+            position: relative;
+        }
+        #nested-li4{
+            width: 290px;
+            position: absolute;
+            display: none;
+            z-index: 100;
+            background-color: white;
+            border: 3px solid #ae5913;
+
+        }
+        #demo4 > a:hover,#demo4:hover{
+            background-color: #ae5913
+        }
+        #demo5:hover{
+            background-color: #ae5913
+        }
+        #demo6:hover{
+            background-color: #ae5913
+        }
+        #demo4:hover #nested-li4{
+            display: block;
+        }
+        #nested-li4 ul{
+            list-style: none;
+            margin: 10px 12px 2px 10px;
+            padding-left: 0px;
+        }
+        #nested-li4 ul li{
+            border-bottom: 1px solid rgba(189, 189, 189, 0.28);
+            line-height:27px;
+        }
+        #nested-li4 ul li:last-child{
+            border-bottom: none;
+        }
+        #nested-li4 ul a{
+            font-size: 14px
+        }
+        #footer-social{
+            float: left;
+            color: white;
+            margin: 15px 0px 15px 0px;
+            font-size: 13px;
+        }
+        #footer-img{
+            width: 166px;
+            height: 33px;
+        }
+        #footer-img img{
+            width: 100%;
+            height: 100%;
+        }
+        #footer-terms-condition{
+            font-size: 13px;
+            float: left;
+            color: white;
+            margin: 15px 120px 15px 70px;
+            line-height: 17px;
+        }
+        #footer-apps-btn{
+            font-size: 13px;
+            line-height: 20px;
+            float: right;
+            color: white;
+            margin : 15px 0px 0px 0px;
+        }
+        #mobile-devices{
+            float: left;
+            margin: -20px 0px 0px 0px;
+        }
+        #mobile-devices img{
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body style="background-image: url('images/main_bg.jpg')">
+<div>
+  <div id="bg-img">
+     <div class="container">
+        <div>
+            <div class="navbar-brand">
+                <img src="images/logo.gif">
+            </div>
+            <div id="nav-right">
+                <ul>
+                    <li>Your Local Pizzeria:<span style="color: white"> 416 967-1111</span></li>
+                    <li><a href="#">Investors</a></li>
+                    <li><a href="#">Media </a></li>
+                    <li><a href="#">Social Responsibility </a></li>
+                    <li><a href="#">Français</a></li>
+                </ul>
+            </div>
+            <div>
+                <ul id="secondNavbar" class="nav navbar-nav">
+                    <li id="demo"><a href="#">ORDER UP</a>
+                        <div id="nestedLi">
+                            <div id="firstNestedUl">
+                            <ul>
+                            <li><a href="#">Order Now</a></li>
+                            <li><a href="#">View Our Menu</a></li>
+                            <li><a href="#">Nutrition</a></li>
+                            <li><a href="#">Menu FAQ</a></li>
+                            <li><a href="#">Fresh Topping</a></li>
+                            </ul>
+                            </div>
+                            <div id="secondNestedUl">
+                            <ul>
+                                <li><a href="#">School Lunch Prgram/ Catering</a></li>
+                                <li><a href="#">Club 11-11/Gift Card</a></li>
+                                <li><a href="#">Visa Checkout</a></li>
+                                <li><a href="#">Masterpass</a></li>
+                            </ul>
+                            </div>
+                            <div id="thirdNestedDiv">
+                                We only use the freshest topping!<br>
+                                <a href="#">Learn More</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="#" id="demo5">FIND US</a></li>
+                    <li id="demo2"><a href="#" >JOIN OUR FAMILY</a>
+                        <div id="nestedLiDiv">
+                            <ul>
+                                <li><a href="#">Franchising</a></li>
+                                <li><a href="#">Corporate Careers</a></li>
+                                <li><a href="#">Restaurant Career</a></li>
+                                <li><a href="#">Real Estate</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li id="demo3"><a href="#">COMPANY</a>
+                        <div id="nestedLiDiv2">
+                    <ul>
+                        <li><a href="#">Made specially For you</a></li>
+                        <li><a href="#">Management</a></li>
+                        <li><a href="#">Investor</a></li>
+                        <li><a href="#">Press</a></li>
+                    </ul>
+                        </div>
+                    </li>
+                    <li id="demo4"><a href="#" >FAN ZONE</a>
+                        <div id="nested-li4">
+                            <ul>
+                                <li><a href="#">Club 11-11/Gift Card</a></li>
+                                <li><a href="#">Events</a></li>
+                                <li><a href="#">Contest / Promotions</a></li>
+                                <li><a href="#">Contest Winners</a></li>
+                                <li><a href="#">Kids Club</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="#" id="demo6">VIEW OUR MENU</a></li>
+                </ul>
+            </div>
+        </div> <!--end navbar-->
+    </div> <!--end container-->
+  </div>
+
+
+
+    <div class="container">
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <img src="images/pic1.jpg" class="img-thumbnail" width="100%" alt="...">
+                    <div class="carousel-caption">
+                        ...
+                    </div>
+                </div>
+                <div class="item ">
+                    <img src="images/pic2.png" class="img-thumbnail" width="100%" alt="...">
+                    <div class="carousel-caption">
+                        ...
+                    </div>
+                </div>
+                <div class="item ">
+                    <img src="images/pic3.jpg" class="img-thumbnail" width="100%" alt="...">
+                    <div class="carousel-caption">
+                        ...
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="images/pic4.png" class="img-thumbnail" width="100%" alt="...">
+                    <div class="carousel-caption">
+                        ...
+                    </div>
+                </div>
+                ...
+            </div>
+            <!--Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+            </ol>
+            <!-- Controls -->
+            <!--<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">-->
+                <!--<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>-->
+                <!--<span class="sr-only">Previous</span>-->
+            <!--</a>-->
+            <!--<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">-->
+                <!--<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>-->
+                <!--<span class="sr-only">Next</span>-->
+            <!--</a>-->
+        </div>
+
+
+        <div style="border: 4px solid white;"> <!--start images-->
+            <img src="images/img2.jpg" width="500px" height="200px" >
+            <img src="images/img.jpg" width="311px" height="200px" >
+            <img src="images/17840-Web-Homepage-Callout-Menu-ENG4.png" width="311px" height="200px" >
+        </div>
+    </div><br><br>
+
+    <div class="" style="background-color: #ff5506"> <!--start footer-->
+        <div class="container">
+            <div id="footer-social">
+                <div id="footer-img">
+                    <img src="images/logo.gif">
+                </div>
+                <div>
+                    Copyright &copy Pizza Pizza 2015<br><br>
+                    Join us on:
+                </div><br>
+                <div id="footer-social-Img">
+                    <a href="#"><img src="images/footer_facebook.png" width="" height=""></a>
+                    <a href="#"><img src="images/footer_twitter.png" width="" height=""></a>
+                </div>
+            </div>   <!--end footer social-->
+
+            <div id="footer-terms-condition">
+                <div>
+                    Guarantee Policy<br>
+                    Privacy Policy<br>
+                    Terms and conditions<br>
+                    Get in Touch<br>
+                    Accesibilty
+                </div><br>
+                <div>
+                   <a href="#"><img src="images/footer_accessible.png"></a>
+                </div>
+            </div><!--end footer terms and condition-->
+
+            <div id="mobile-devices"><!--img mobile device-->
+               <a href="#"><img src="images/mobile_devices.png"></a>
+            </div> <!--img mobile device-->
+            <div id="footer-apps-btn"> <!--end footer apps-->
+                <div >
+                     <strong>NOW AVAILABLE!</strong> <br>
+                    Mobile App for the IPhone, iPad, iPod<br> Touch and Android Smartphones or try<br> our new mobile website with any smartphone.
+                </div><br>
+                    <a href="#"><img src="images/appstore_button.png"></a>
+                    <a href="#"><img src="images/googleplay_button.png"></a>
+
+            </div> <!--end footer apps-->
+        </div>
+    </div><!--end footer-->
+
+
+</div>
+
+
+</body>
+</html>
